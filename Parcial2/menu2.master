@@ -1,0 +1,192 @@
+﻿<%@ Master Language="VB" CodeFile="menu2.master.vb" Inherits="menu2" %>
+
+<%@ Register Assembly="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+    Namespace="System.Web.UI" TagPrefix="asp" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PIDEKY</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="Styles/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="Styles/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="Styles/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="Styles/plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="Styles/dist/css/adminlte.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="Styles/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="Styles/plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="Styles/plugins/summernote/summernote-bs4.min.css">
+
+    <link rel="Stylesheet" type="text/css" href="Styles/css/Styles.css" />
+    <link href="Styles/sweetalert/src/sweetalert2.min.css" rel="Stylesheet" />
+    <link href="Styles/css/hide-column.css" rel="stylesheet" type="text/css" />
+
+    <script src="../Styles/js/jquery-3.5.0.js" type="text/javascript">  </script>
+    <%--<script src="../Styles/js/jquery-3.5.0.min.js" type="text/javascript"> </script>--%>
+
+    <script src="https://cdn.ckeditor.com/4.15.0/full/ckeditor.js"></script>
+
+    <script src="https://code.highcharts.com/highcharts.js" type="text/javascript"></script>
+    <script src="https://code.highcharts.com/highcharts-3d.js" type="text/javascript"> </script>
+    <script src="https://code.highcharts.com/modules/exporting.js" type="text/javascript"></script>
+</head>
+<%-- (text-sm) para letra mas pequeña --%>
+<body class="hold-transition sidebar-mini layout-fixed text-sm">
+    <div class="wrapper">
+
+        <!-- Navbar Top -->
+        
+        <!-- /.navbar Top -->
+
+        <!-- Main Sidebar Container -->
+        
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header" style="padding: 0px !important;">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <%--<li class="breadcrumb-item">
+                                    <a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Dashboard v1</li>--%>
+                            </ol>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+
+            <section class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <form id="form1" runat="server">
+                            <div>
+                                <asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="0">
+                                    <ProgressTemplate>
+                                        <script type="text/javascript">document.write("<div class='UpdateProgressBackground'><div class='UpdateProgressContent'> <img src='../Styles/images/loader1.gif' /><br /><span>Loading...</span> </div> </div>");</script>
+                                    </ProgressTemplate>
+                                </asp:UpdateProgress>
+                                <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"
+                                    EnableScriptLocalization="True" AsyncPostBackTimeout="420">
+                                    <Scripts>
+                                        <asp:ScriptReference Path="~/Styles/js/hide-column.js" />
+                                        <asp:ScriptReference Path="~/Styles/plugins/jquery-ui/jquery-ui.min.js" />
+                                        <asp:ScriptReference Path="~/Styles/plugins/bootstrap/js/bootstrap.bundle.min.js" />
+                                        <asp:ScriptReference Path="~/Styles/plugins/chart.js/Chart.min.js" />
+                                        <asp:ScriptReference Path="~/Styles/plugins/sparklines/sparkline.js" />
+                                        <asp:ScriptReference Path="~/Styles/plugins/jqvmap/jquery.vmap.min.js" />
+                                        <asp:ScriptReference Path="~/Styles/plugins/jqvmap/maps/jquery.vmap.usa.js" />
+                                        <asp:ScriptReference Path="~/Styles/plugins/jquery-knob/jquery.knob.min.js" />
+                                        <asp:ScriptReference Path="~/Styles/plugins/moment/moment.min.js" />
+                                        <asp:ScriptReference Path="~/Styles/plugins/daterangepicker/daterangepicker.js" />
+                                        <asp:ScriptReference Path="~/Styles/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js" />
+                                        <asp:ScriptReference Path="~/Styles/plugins/summernote/summernote-bs4.min.js" />
+                                        <asp:ScriptReference Path="~/Styles/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js" />
+                                        <asp:ScriptReference Path="~/Styles/dist/js/adminlte.js" />
+                                        <asp:ScriptReference Path="~/Styles/dist/js/demo.js" />
+                                        <%--<asp:ScriptReference Path="~/Styles/dist/js/pages/dashboard.js" />--%>
+                                        <asp:ScriptReference Path="~/Styles/js/funciones.js" />
+                                        <asp:ScriptReference Path="~/Styles/sweetalert/src/sweetalert2.min.js" />
+                                    </Scripts>
+                                </asp:ScriptManager>
+
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                        </asp:ContentPlaceHolder>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+    <style>
+        .dd_chk_select {
+            font-family: inherit;
+            font: inherit;
+            height: 25px !important;
+            display: block;
+            width: 250px;
+            padding: 4px 8px;
+            font-size: 11px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+        }
+    </style>
+
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+
+    <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCeDjyqKa8QoQ9BjCnQkAZhF8U8t6-xLi8'></script>
+    <script type='text/javascript'>
+        function imgError(image) {
+            image.src = "../Styles/images/imagen_no_disponible.png";
+        }
+    </script>
+    <script type='text/javascript'>
+        /** add active class and stay opened when selected */
+        var url = window.location;
+
+        // for sidebar menu entirely but not cover treeview
+        $('ul.nav-sidebar a').filter(function () {
+            return this.href == url;
+        }).addClass('active');
+
+        // for treeview
+        $('ul.nav-treeview a').filter(function () {
+            return this.href == url;
+        }).parentsUntil(".nav-sidebar > .nav-treeview").addClass('menu-open').prev('a').addClass('active');
+    </script>
+
+	
+            <script>
+                $(document).ready(function () {
+                    if (window.history.replaceState) { // verificamos disponibilidad
+                        window.history.replaceState(null, null, window.location.href);
+                    }
+                });
+            </script>
+</body>
+</html>
